@@ -1,58 +1,141 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 💍 Wedding Invitation Web App (Undangan Pernikahan Digital)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel Version](https://img.shields.io/badge/Laravel-v11.x%20%2F%20v13.x-red.svg?style=flat-square&logo=laravel)](https://laravel.com)
+[![Livewire Version](https://img.shields.io/badge/Livewire-v4.x-4e56a6.svg?style=flat-square&logo=livewire)](https://livewire.laravel.com)
+[![AlpineJS](https://img.shields.io/badge/AlpineJS-v3.x-8bc0d0.svg?style=flat-square&logo=alpine.js)](https://alpinejs.dev)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.x-38bdf8.svg?style=flat-square&logo=tailwind-css)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-## About Laravel
+A modern, highly customizable digital wedding invitation web application built with **Laravel**, **Livewire**, **Alpine.js**, and **Tailwind CSS**. It features a robust administration dashboard to manage invitation details and 4 beautifully crafted premium themes to wow your guests.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **🎨 4 Premium Aesthetic Themes:**
+  - **Elegant Emerald & Gold (`elegant`):** A luxurious, dark-themed emerald & gold layout for high-end ceremonies.
+  - **Modern Rustic Forest (`genz`):** A clean light theme with dynamic pine needle particles for the modern Gen-Z aesthetic.
+  - **Pastel Sakura (`pastel`):** A minimalist, soft-pink cherry blossom theme with falling blossom animations.
+  - **Retro Vintage (`retro`):** A funky terracotta & orange design for couples loving vintage/hipster designs.
+- **✉️ Dynamic Personalized Invitation Cover:**
+  - Double-border envelope opening effect with dynamic "Wax Seal" trigger.
+  - Custom guest greeting via URL parameter (e.g., `/?to=Nama+Tamu`).
+- **⏳ Real-time Countdown Timer:**
+  - Automatically calculates the remaining days, hours, minutes, and seconds until the main event starts.
+- **🗺️ Interactive Map & Directions:**
+  - Integration with **Leaflet.js** (OpenStreetMap) with a styled sepia custom overlay.
+  - Fallback embedding for **Google Maps iframe**.
+  - One-click "Buka Peta Lokasi" button.
+- **💬 RSVP & Real-time Buku Tamu (Greetings):**
+  - Instant guest validation, status option (Hadir / Tidak Hadir / Ragu), and custom greeting form.
+  - Real-time updates without page reloading using Laravel Livewire.
+- **🎵 Auto-playback & Audio Control:**
+  - Supports standard `.mp3` audio files and direct YouTube URL background music.
+  - Custom dynamic rotating play/pause floating control button.
+- **🛠️ Fully Loaded Admin Control Center (`/admin`):**
+  - Real-time form updates for Groom/Bride profiles, welcome message, event coordinates, background music, and active template switcher.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Technical Stack
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend:** Laravel 11/13 + PHP 8.3+
+- **Frontend Engine:** Livewire v4 (Real-time reactivity)
+- **Interactive Logic:** Alpine.js
+- **Styling:** Tailwind CSS (Custom themes, font families, keyframe animations)
+- **Map System:** Leaflet.js & OpenStreetMap API
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## 🚀 Installation & Setup
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Follow these simple steps to run this project locally:
 
-```bash
-composer require laravel/boost --dev
+### Prerequisites
 
-php artisan boost:install
+Make sure you have installed:
+- PHP >= 8.3
+- Composer
+- Node.js (with npm)
+- SQLite (or another database server like MySQL)
+
+### Step-by-Step Guide
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yambuttt/wedding-inv.git
+   cd wedding-inv
+   ```
+
+2. **Run Automagic Setup script:**
+   This project comes pre-configured with a setup command that installs dependencies, copies `.env`, generates the app key, and builds assets:
+   ```bash
+   composer setup
+   ```
+   > [!TIP]
+   > The setup script runs `composer install`, sets up your `.env` file, generates the security key, runs migration commands, installs Node.js packages, and builds frontend assets automatically.
+
+3. **Configure Database & Credentials:**
+   Open the `.env` file and verify your database connection. By default, it's set to use **SQLite**:
+   ```env
+   DB_CONNECTION=sqlite
+   DB_DATABASE=database/database.sqlite
+   ```
+
+4. **Seed Default Data:**
+   Populate the database with a default wedding invitation (Sari & Raju) and create the default admin account:
+   ```bash
+   php artisan db:seed
+   ```
+
+5. **Start Dev Server:**
+   Run the concurrent developer task runner which starts the web server, queue listener, and Vite watcher simultaneously:
+   ```bash
+   composer dev
+   ```
+   Alternatively, run them separately:
+   ```bash
+   # Terminal 1: Serve PHP Application
+   php artisan serve
+
+   # Terminal 2: Run Vite compiler
+   npm run dev
+   ```
+
+---
+
+## 👤 Admin Access Credentials
+
+After seeding the database, navigate to `http://localhost:8000/admin` to modify the invitation details. Use these credentials to log in (if authentication is requested or to customize):
+
+| Field | Default Value |
+| :--- | :--- |
+| **Email** | `admin@wedding.com` |
+| **Password** | `admin123` |
+
+---
+
+## 📁 Directory Structure
+
+```text
+├── app/
+│   └── Models/               # Eloquent Models (Invitation, Greeting, Guest)
+├── database/
+│   ├── migrations/           # Database Schema Migrations
+│   └── seeders/              # Database Seeder (Demo Data & User Seed)
+├── resources/
+│   ├── css/                  # Custom CSS Styles and Animations
+│   ├── js/                   # Javascript Initialization (Leaflet map config)
+│   └── views/
+│       ├── admin.blade.php   # Admin Panel Layout
+│       ├── welcome.blade.php # Invitation Page Layout
+│       └── components/       # Livewire Components (⚡invitation-admin, ⚡wedding-invitation)
+└── routes/
+    └── web.php               # Web Routing definitions
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## 📜 License
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-source software licensed under the [MIT License](LICENSE). Feel free to customize and use it for your special day!
